@@ -1,27 +1,7 @@
-libvirt:
-  pkg.installed: []
-  file.managed:
-    - name: /etc/sysconfig/libvirtd
-    - contents: 'LIBVIRTD_ARGS="--listen"'
-    - require:
-      - pkg: libvirt
-  virt.keys:
-    - require:
-      - pkg: libvirt
-  service.running:
-    - name: libvirtd
-    - require:
-      - pkg: libvirt
-      - network: br0
-      - libvirt: libvirt
-    - watch:
-      - file: libvirt
-
-libvirt-python:
-  pkg.installed: []
-
-libguestfs:
+test_usefull_pkgs:
   pkg.installed:
     - pkgs:
-      - libguestfs
-      - libguestfs-tools
+       - kvm
+       - kvm-ipxe
+       - qemu-kvm-spice
+
