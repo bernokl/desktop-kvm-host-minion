@@ -1,5 +1,5 @@
 include:
-  - test.libvert
+  - kvmconfig.libvert
 
 network_config:
   pkg.installed:
@@ -7,7 +7,7 @@ network_config:
     - pkgs:
         - vlan
 
-#eth0:
+#p4p1:
 #  network.managed:
 #    - enabled: True
 #    - type: eth
@@ -19,4 +19,4 @@ network_config:
 #    - type: bridge
 #    - proto: dhcp
 #    - require:
-#      - network: eth0
+#      - network: p4p1
